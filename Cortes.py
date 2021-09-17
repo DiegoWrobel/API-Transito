@@ -1,8 +1,5 @@
 import requests
 import json
-import pprint
-import random
-import html
 import os
 import gmplot
 
