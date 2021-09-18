@@ -3,13 +3,13 @@ import json
 import os
 import gmplot
 
-key = ''   # Key de la API de Google Maps (Dejar en blanco si no tenes)
-secret = '' # Token de la API Transporte https://www.buenosaires.gob.ar/desarrollourbano/transporte/apitransporte
+key = ''        # Key de la API de Google Maps (Dejar en blanco si no tenes)
+client_id = ''  # Token de la API Transporte
+secret = ''     # Token de la API Transporte https://www.buenosaires.gob.ar/desarrollourbano/transporte/apitransporte
 
-url = "https://apitransporte.buenosaires.gob.ar/transito/v1/cortes?client_id=1153751&client_secret={secret}"
+url = "https://apitransporte.buenosaires.gob.ar/transito/v1/cortes?client_id={client_id]&client_secret={secret}"
 r = requests.get(url)
 data = json.loads(r.text)
-
 for i in range(len(data['incidents'])):
     print("id:", data['incidents'][i].get('id', 'Sin id'))
     print("Evento padre:", data['incidents'][i].get('parent_event', 'Sin evento padre'))
