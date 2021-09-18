@@ -55,7 +55,7 @@ for i in range(len(geo)):
     
     gmap.scatter(listlat, listlon, '#FF0000',size = 10, marker = True )
     gmap.plot(listlat, listlon, 'cornflowerblue', edge_width=10)
-    gmap.text(listlat[0], listlon[0], id[i], color='red')
+    gmap.text(listlat[i], listlon[i], id[i], color='red')
 
 os.getcwd()
 gmap.draw(os.getcwd()+"\cortes.html")
